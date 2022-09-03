@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-09-03 07:32:53.952872",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date",
+  "type__tiers",
+  "client",
+  "fournisseur",
+  "utilisateur",
+  "depenses",
+  "recettes",
+  "type_op",
+  "reference",
+  "type_op_comp",
+  "compte",
+  "compte_dest",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "naming_series",
+   "options": ".YYYY./.######"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "type__tiers",
+   "fieldtype": "Select",
+   "label": "Type Tiers",
+   "options": "Client\nFournisseur"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "fournisseur",
+   "fieldtype": "Link",
+   "label": "Fournisseur",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "utilisateur",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "utilisateur",
+   "options": "User",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "recettes",
+   "fieldtype": "Float",
+   "label": "Recettes "
+  },
+  {
+   "fieldname": "depenses",
+   "fieldtype": "Float",
+   "label": "D\u00e9penses"
+  },
+  {
+   "fieldname": "type_op",
+   "fieldtype": "Data",
+   "label": "Type d'op\u00e9ration"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "R\u00e9f\u00e9rence"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text",
+   "label": "Note"
+  },
+  {
+   "fieldname": "type_op_comp",
+   "fieldtype": "Select",
+   "label": "Type d'op\u00e9ration compte",
+   "options": "Recettes\nD\u00e9penses"
+  },
+  {
+   "fieldname": "compte",
+   "fieldtype": "Link",
+   "label": "Compte",
+   "options": "Compte"
+  },
+  {
+   "fieldname": "compte_dest",
+   "fieldtype": "Link",
+   "label": "Compte Destinataire",
+   "options": "Compte"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-03 07:52:51.104675",
+ "modified_by": "Administrator",
+ "module": "tresorerie",
+ "name": "Operations",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

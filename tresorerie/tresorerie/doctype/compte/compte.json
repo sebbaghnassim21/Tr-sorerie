@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-09-03 06:20:21.385910",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "nom_du_compte",
+  "type_de_compte",
+  "banque",
+  "n_de_compte_bancaire",
+  "caisse"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "naming_series"
+  },
+  {
+   "fieldname": "nom_du_compte",
+   "fieldtype": "Data",
+   "label": "nom_du_compte"
+  },
+  {
+   "fieldname": "type_de_compte",
+   "fieldtype": "Select",
+   "label": "type_de_compte",
+   "options": "Esp\u00e8ces\nBanque"
+  },
+  {
+   "fieldname": "banque",
+   "fieldtype": "Data",
+   "label": "Banque"
+  },
+  {
+   "fieldname": "n_de_compte_bancaire",
+   "fieldtype": "Data",
+   "label": "N_de_compte_bancaire"
+  },
+  {
+   "default": "0",
+   "fieldname": "caisse",
+   "fieldtype": "Check",
+   "label": "caisse"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-03 06:20:21.385910",
+ "modified_by": "Administrator",
+ "module": "tresorerie",
+ "name": "Compte",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
