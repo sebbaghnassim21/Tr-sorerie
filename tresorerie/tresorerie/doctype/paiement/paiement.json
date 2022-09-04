@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-09-04 06:50:47.976923",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "type_de_paiement",
+  "tiers",
+  "client",
+  "fournisseur",
+  "compte",
+  "compt_dest",
+  "mode_de_payement",
+  "date_heure",
+  "date",
+  "montant",
+  "n_de_reference",
+  "date_de_reference",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "naming_series",
+   "options": "PAI.YYYY.######"
+  },
+  {
+   "fieldname": "type_de_paiement",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type de paiement",
+   "options": "Recevoir\nPayer\nTransfert interne",
+   "reqd": 1
+  },
+  {
+   "fieldname": "compte",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Compte",
+   "options": "Compte",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "compt_dest",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Compte Pay\u00e9 Au",
+   "options": "Compte"
+  },
+  {
+   "fieldname": "mode_de_payement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Moyen de paiement",
+   "options": "Mode of Payment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_heure",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "date_heure",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "montant",
+   "fieldtype": "Data",
+   "label": "Montant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "n_de_reference",
+   "fieldtype": "Data",
+   "label": "N\u00b0 de R\u00e9f\u00e9rence",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_de_reference",
+   "fieldtype": "Data",
+   "label": "Date de R\u00e9f\u00e9rence",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Paiement",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "tiers",
+   "fieldtype": "Select",
+   "label": "Tiers",
+   "options": "Client\nFournisseur"
+  },
+  {
+   "depends_on": "eval:doc.tiers != 'Fournisseur'",
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.tiers != 'Client'",
+   "fieldname": "fournisseur",
+   "fieldtype": "Link",
+   "label": "Fournisseur",
+   "options": "Supplier"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-09-04 07:13:20.943717",
+ "modified_by": "Administrator",
+ "module": "tresorerie",
+ "name": "Paiement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
