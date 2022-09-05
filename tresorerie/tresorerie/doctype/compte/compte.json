@@ -18,17 +18,18 @@
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
-   "label": "naming_series"
+   "label": "naming_series",
+   "options": ".YYYY./.#####"
   },
   {
    "fieldname": "nom_du_compte",
    "fieldtype": "Data",
-   "label": "nom_du_compte"
+   "label": "Compte"
   },
   {
    "fieldname": "type_de_compte",
    "fieldtype": "Select",
-   "label": "type_de_compte",
+   "label": "Type",
    "options": "Esp\u00e8ces\nBanque"
   },
   {
@@ -39,18 +40,18 @@
   {
    "fieldname": "n_de_compte_bancaire",
    "fieldtype": "Data",
-   "label": "N_de_compte_bancaire"
+   "label": "N\u00b0de compte bancaire"
   },
   {
    "default": "0",
    "fieldname": "caisse",
    "fieldtype": "Check",
-   "label": "caisse"
+   "label": "Caisse"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-03 06:20:21.385910",
+ "modified": "2022-09-05 08:40:20.170871",
  "modified_by": "Administrator",
  "module": "tresorerie",
  "name": "Compte",

@@ -2,32 +2,38 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2022-09-04 06:50:47.976923",
+ "creation": "2022-09-05 08:24:42.475441",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "section_break_1",
   "naming_series",
   "type_de_paiement",
+  "section_break_4",
   "tiers",
-  "client",
-  "fournisseur",
+  "customer",
+  "supplier",
+  "section_break_8",
   "compte",
   "compt_dest",
   "mode_de_payement",
-  "date_heure",
   "date",
   "montant",
   "n_de_reference",
   "date_de_reference",
-  "amended_from"
+  "note"
  ],
  "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "naming_series",
-   "options": "PAI.YYYY.######"
+   "options": "PAY.YYYY.######"
   },
   {
    "fieldname": "type_de_paiement",
@@ -38,6 +44,41 @@
    "reqd": 1
   },
   {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.type_de_paiement != 'Transfert interne'",
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "tiers",
+   "fieldtype": "Select",
+   "label": "Tiers",
+   "options": "Client\nFournisseur"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.tiers != 'Fournisseur'",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.tiers != 'Client'",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Fournisseur",
+   "options": "Supplier"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
    "fieldname": "compte",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -47,13 +88,14 @@
   },
   {
    "allow_in_quick_entry": 1,
+   "depends_on": "eval:doc.type_de_paiement == 'Transfert interne'",
    "fieldname": "compt_dest",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Compte Pay\u00e9 Au",
    "options": "Compte"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "mode_de_payement",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -62,73 +104,44 @@
    "reqd": 1
   },
   {
-   "fieldname": "date_heure",
-   "fieldtype": "Datetime",
-   "hidden": 1,
-   "label": "date_heure",
-   "print_hide": 1
-  },
-  {
+   "allow_in_quick_entry": 1,
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
-   "label": "Date",
-   "reqd": 1
+   "label": "Date"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "montant",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Montant",
    "reqd": 1
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "n_de_reference",
    "fieldtype": "Data",
-   "label": "N\u00b0 de R\u00e9f\u00e9rence",
-   "reqd": 1
+   "label": "N\u00b0 de R\u00e9f\u00e9rence"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "date_de_reference",
-   "fieldtype": "Data",
-   "label": "Date de R\u00e9f\u00e9rence",
-   "reqd": 1
+   "fieldtype": "Date",
+   "label": "Date de R\u00e9f\u00e9rence"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Paiement",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "tiers",
-   "fieldtype": "Select",
-   "label": "Tiers",
-   "options": "Client\nFournisseur"
-  },
-  {
-   "depends_on": "eval:doc.tiers != 'Fournisseur'",
-   "fieldname": "client",
-   "fieldtype": "Link",
-   "label": "Client",
-   "options": "Customer"
-  },
-  {
-   "depends_on": "eval:doc.tiers != 'Client'",
-   "fieldname": "fournisseur",
-   "fieldtype": "Link",
-   "label": "Fournisseur",
-   "options": "Supplier"
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "note"
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2022-09-04 07:13:20.943717",
+ "modified": "2022-09-05 08:34:42.514549",
  "modified_by": "Administrator",
  "module": "tresorerie",
- "name": "Paiement",
+ "name": "Payement",
  "owner": "Administrator",
  "permissions": [
   {
