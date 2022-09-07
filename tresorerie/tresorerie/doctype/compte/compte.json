@@ -19,7 +19,7 @@
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "naming_series",
-   "options": ".YYYY./.#####"
+   "options": ".##.-.nom_du_compte"
   },
   {
    "fieldname": "nom_du_compte",
@@ -51,10 +51,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-05 08:40:20.170871",
+ "modified": "2022-09-07 12:00:00.686392",
  "modified_by": "Administrator",
  "module": "tresorerie",
  "name": "Compte",
+ "name_case": "Title Case",
  "owner": "Administrator",
  "permissions": [
   {
@@ -70,6 +71,7 @@
    "write": 1
   }
  ],
+ "search_fields": "nom_du_compte",
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1

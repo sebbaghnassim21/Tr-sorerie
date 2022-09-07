@@ -15,6 +15,7 @@
   "utilisateur",
   "recettes",
   "depenses",
+  "montant",
   "type_op",
   "reference",
   "type_op_comp",
@@ -102,11 +103,17 @@
    "fieldtype": "Link",
    "label": "Compte Destinataire",
    "options": "Compte"
+  },
+  {
+   "fieldname": "montant",
+   "fieldtype": "Float",
+   "label": "Montant",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-03 08:28:20.567950",
+ "modified": "2022-09-07 13:27:50.313519",
  "modified_by": "Administrator",
  "module": "tresorerie",
  "name": "Operations",
