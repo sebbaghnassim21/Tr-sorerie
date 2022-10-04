@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-03 09:48:48.554970",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "naming_series",
+  "type_op",
+  "section_break_4",
+  "customer",
+  "compte",
+  "date",
+  "montant",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "SOLD.YYYY.######"
+  },
+  {
+   "fieldname": "type_op",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Solde initial client\nSolde initial compte"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.type_op != 'Solde initial compte'",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "tiers",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.type_op != 'Solde initial client'",
+   "fieldname": "compte",
+   "fieldtype": "Link",
+   "label": "Compte",
+   "options": "Compte"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "montant",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Montant",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Small Text",
+   "label": "Note"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-10-03 10:55:59.448407",
+ "modified_by": "Administrator",
+ "module": "tresorerie",
+ "name": "Solde initial",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

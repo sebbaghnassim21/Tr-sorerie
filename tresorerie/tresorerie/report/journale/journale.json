@@ -1,0 +1,42 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2022-09-25 23:56:34.785734",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "Du",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "Au",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2022-10-02 11:30:21.183143",
+ "modified_by": "Administrator",
+ "module": "tresorerie",
+ "name": "Journale",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT (client)Client ,sum(recettes)Recettes,sum(depenses)Depenses,sum(montant)Montant,max(date)Date,max(type_op)Type\r\nFROM `tabOperations`\r\nWHERE (DATE(`tabOperations`.`date`) < %(from_date)s )\r\nGROUP BY client\r\nUNION ALL\r\nSELECT (client)Client ,(recettes)Recettes,(depenses)Depenses,(montant)Montant,(date)Date,(type_op)Type\r\nFROM `tabOperations`\r\nWHERE (DATE(`tabOperations`.`date`) between %(from_date)s and %(to_date)s)",
+ "ref_doctype": "Operations",
+ "report_name": "Journale",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
